@@ -1,0 +1,27 @@
+{
+  "annotations": {
+    "changelogDate": "20240509210218"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "fields": [],
+  "name": "WatchLater",
+  "pagination": "infinite-scroll",
+  "relationships": [
+    {
+      "otherEntityName": "video",
+      "relationshipName": "video",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "user",
+      "relationshipName": "userProfile",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipWithBuiltInEntity": true
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}
