@@ -29,7 +29,7 @@ export const PasswordResetInit = () => {
   }, [successMessage]);
 
   return (
-    <div>
+    <div className="hipster">
       <Row className="justify-content-center">
         <Col md="8">
           <h1>

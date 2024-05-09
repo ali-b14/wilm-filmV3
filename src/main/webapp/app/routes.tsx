@@ -14,6 +14,8 @@ import PrivateRoute from 'app/shared/auth/private-route';
 import ErrorBoundaryRoutes from 'app/shared/error/error-boundary-routes';
 import PageNotFound from 'app/shared/error/page-not-found';
 import { AUTHORITIES } from 'app/config/constants';
+import Dashboard from './modules/dashboard/dashboard';
+import Movie from './modules/dashboard/movie';
 
 const loading = <div>loading ...</div>;
 
@@ -33,6 +35,10 @@ const AppRoutes = () => {
         <Route index element={<Home />} />
         <Route path="login" element={<Login />} />
         <Route path="logout" element={<Logout />} />
+        <Route path="dashboard" element={<Dashboard />} />
+        <Route path="movie" element={<Movie />} />
+        {/* <Route path="aboutUs" element={<AboutUs />} /> */}
+        {/* <Route path="contactUs" element={<ContactUs />} /> */}
         <Route path="account">
           <Route
             path="*"
@@ -60,8 +66,16 @@ const AppRoutes = () => {
         <Route
           path="*"
           element={
-            <PrivateRoute hasAnyAuthorities={[AUTHORITIES.USER]}>
+            <PrivateRoute hasAnyAuthorities={[AUTHORITIES.ADMIN]}>
               <EntitiesRoutes />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="dashboard/*"
+          element={
+            <PrivateRoute hasAnyAuthorities={[AUTHORITIES.ADMIN, AUTHORITIES.USER]}>
+              <Dashboard />
             </PrivateRoute>
           }
         />

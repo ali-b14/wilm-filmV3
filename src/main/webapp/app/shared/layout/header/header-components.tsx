@@ -1,3 +1,5 @@
+import './header.scss';
+
 import React from 'react';
 import { Translate } from 'react-jhipster';
 
@@ -7,17 +9,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export const BrandIcon = props => (
   <div {...props} className="brand-icon">
-    <img src="content/images/logo-jhipster.png" alt="Logo" />
+    <img src="/content/images/d55b39bce988ccc457e8a9e01322cb5a.png" alt="Logo" />
   </div>
 );
 
 export const Brand = () => (
   <NavbarBrand tag={Link} to="/" className="brand-logo">
     <BrandIcon />
-    <span className="brand-title">
-      <Translate contentKey="global.title">WilmFilm</Translate>
-    </span>
-    <span className="navbar-version">{VERSION.toLowerCase().startsWith('v') ? VERSION : `v${VERSION}`}</span>
+    {/* <span className="brand-title">
+      <Translate contentKey="global.title" >WilmFilm</Translate>
+    </span> */}
+    {/* <span className="navbar-version">{VERSION.toLowerCase().startsWith('v') ? VERSION : `v${VERSION}`}</span> */}
   </NavbarBrand>
 );
 
@@ -25,7 +27,7 @@ export const Home = () => (
   <NavItem>
     <NavLink tag={Link} to="/" className="d-flex align-items-center">
       <FontAwesomeIcon icon="home" />
-      <span>
+      <span className="home-title">
         <Translate contentKey="global.menu.home">Home</Translate>
       </span>
     </NavLink>
