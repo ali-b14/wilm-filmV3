@@ -1,0 +1,25 @@
+{
+  "wilmFilmApp": {
+    "watchLater": {
+      "home": {
+        "title": "Watch Laters",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Watch Later",
+        "createOrEditLabel": "Create or edit a Watch Later",
+        "notFound": "No Watch Laters found"
+      },
+      "created": "A new Watch Later is created with identifier {{ param }}",
+      "updated": "A Watch Later is updated with identifier {{ param }}",
+      "deleted": "A Watch Later is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Watch Later {{ id }}?"
+      },
+      "detail": {
+        "title": "Watch Later"
+      },
+      "id": "ID",
+      "video": "Video",
+      "userProfile": "User Profile"
+    }
+  }
+}

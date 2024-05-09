@@ -1,0 +1,32 @@
+{
+  "annotations": {
+    "changelogDate": "20240509203742"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "url",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Video",
+  "pagination": "infinite-scroll",
+  "relationships": [
+    {
+      "otherEntityName": "videoMetaData",
+      "relationshipName": "metaData",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "user",
+      "relationshipName": "uploader",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipWithBuiltInEntity": true
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

@@ -1,0 +1,26 @@
+{
+  "wilmFilmApp": {
+    "watched": {
+      "home": {
+        "title": "Watcheds",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Watched",
+        "createOrEditLabel": "Create or edit a Watched",
+        "notFound": "No Watcheds found"
+      },
+      "created": "A new Watched is created with identifier {{ param }}",
+      "updated": "A Watched is updated with identifier {{ param }}",
+      "deleted": "A Watched is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Watched {{ id }}?"
+      },
+      "detail": {
+        "title": "Watched"
+      },
+      "id": "ID",
+      "watchedAt": "Watched At",
+      "video": "Video",
+      "userProfile": "User Profile"
+    }
+  }
+}

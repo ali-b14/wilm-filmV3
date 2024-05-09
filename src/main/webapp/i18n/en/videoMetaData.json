@@ -1,0 +1,28 @@
+{
+  "wilmFilmApp": {
+    "videoMetaData": {
+      "home": {
+        "title": "Video Meta Data",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Video Meta Data",
+        "createOrEditLabel": "Create or edit a Video Meta Data",
+        "notFound": "No Video Meta Data found"
+      },
+      "created": "A new Video Meta Data is created with identifier {{ param }}",
+      "updated": "A Video Meta Data is updated with identifier {{ param }}",
+      "deleted": "A Video Meta Data is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Video Meta Data {{ id }}?"
+      },
+      "detail": {
+        "title": "Video Meta Data"
+      },
+      "id": "ID",
+      "title": "Title",
+      "genre": "Genre",
+      "uploadDate": "Upload Date",
+      "description": "Description",
+      "video": "Video"
+    }
+  }
+}

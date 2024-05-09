@@ -1,0 +1,34 @@
+{
+  "annotations": {
+    "changelogDate": "20240509203745"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "entityTableName": "jhi_like",
+  "fields": [
+    {
+      "fieldName": "likedAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "Like",
+  "pagination": "infinite-scroll",
+  "relationships": [
+    {
+      "otherEntityName": "user",
+      "relationshipName": "user",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipWithBuiltInEntity": true
+    },
+    {
+      "otherEntityName": "video",
+      "relationshipName": "video",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}
