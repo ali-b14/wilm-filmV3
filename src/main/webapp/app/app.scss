@@ -1,10 +1,11 @@
 // Override Bootstrap variables
 @import 'bootstrap-variables';
-@import 'bootswatch/dist/spacelab/variables';
+@import 'bootswatch/dist/sandstone/variables';
 // Import Bootstrap source files from node_modules
 @import 'bootstrap/scss/bootstrap';
-@import 'bootswatch/dist/spacelab/bootswatch';
+@import 'bootswatch/dist/sandstone/bootswatch';
 body {
+  background-color: #000;
   margin: 0;
 }
 
@@ -23,25 +24,41 @@ a {
   }
 }
 
-.app-container {
-  box-sizing: border-box;
-  .view-container {
-    width: 100%;
-    height: calc(100% - 40px);
-    overflow-y: auto;
-    overflow-x: hidden;
-    padding: 1rem;
-    .card {
-      padding: 1rem;
-    }
-    .view-routes {
-      height: 100%;
-      > div {
-        height: 100%;
-      }
-    }
-  }
+// .app-container {
+//   box-sizing: border-box;
+//   position: relative;
+//   height: 100%;
+//   .view-container {
+//     top: -30px;
+//     width: 100%;
+//     height: calc(100% - 40px);
+//     overflow: hidden;
+//     overflow-x: hidden;
+//     padding: 1rem;
+//     margin-top: -4.2%;
+.card {
+  background-color: rgb(0, 0, 0);
+  border: solid #000000 1px;
 }
+//     .view-routes {
+//       height: 100vh;
+//       > div {
+//         height: 100vh;
+//         overflow: hidden;
+//         position: relative; /* Change position to relative */
+//         width: 100%; /* Set width to 100% */
+//         display: flex; /* Use flexbox for easier centering */
+//         justify-content: center; /* Center horizontally */
+//         align-items: center; /* Center vertically */
+//         background-position: center; /* Center the background image */
+//         background-repeat: no-repeat;
+//         background-size: contain; /* Fit the image within the container */
+//         border-radius: 40px;
+//         animation: change forwards 90s infinite ease-in-out;
+//       }
+//     }
+//   }
+// }
 
 .fullscreen {
   position: fixed;

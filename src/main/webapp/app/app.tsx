@@ -27,7 +27,6 @@ export const App = () => {
     dispatch(getProfile());
   }, []);
 
-  const currentLocale = useAppSelector(state => state.locale.currentLocale);
   const isAuthenticated = useAppSelector(state => state.authentication.isAuthenticated);
   const isAdmin = useAppSelector(state => hasAnyAuthority(state.authentication.account.authorities, [AUTHORITIES.ADMIN]));
   const ribbonEnv = useAppSelector(state => state.applicationProfile.ribbonEnv);
@@ -37,27 +36,24 @@ export const App = () => {
   const paddingTop = '60px';
   return (
     <BrowserRouter basename={baseHref}>
-      <div className="app-container" style={{ paddingTop }}>
-        <ToastContainer position="top-left" className="toastify-container" toastClassName="toastify-toast" />
+      <ToastContainer position="top-left" className="toastify-container" toastClassName="toastify-toast" />
+      <ErrorBoundary>
+        <Header
+          isAuthenticated={isAuthenticated}
+          isAdmin={isAdmin}
+          ribbonEnv={ribbonEnv}
+          isInProduction={isInProduction}
+          isOpenAPIEnabled={isOpenAPIEnabled}
+        />
+      </ErrorBoundary>
+      {/* <div className="container-fluid view-container" id="app-view-container"> */}
+      <Card className="jh-card">
         <ErrorBoundary>
-          <Header
-            isAuthenticated={isAuthenticated}
-            isAdmin={isAdmin}
-            currentLocale={currentLocale}
-            ribbonEnv={ribbonEnv}
-            isInProduction={isInProduction}
-            isOpenAPIEnabled={isOpenAPIEnabled}
-          />
+          <AppRoutes />
         </ErrorBoundary>
-        <div className="container-fluid view-container" id="app-view-container">
-          <Card className="jh-card">
-            <ErrorBoundary>
-              <AppRoutes />
-            </ErrorBoundary>
-          </Card>
-          <Footer />
-        </div>
-      </div>
+      </Card>
+      <Footer isAuthenticated={isAuthenticated} />
+      {/* </div> */}
     </BrowserRouter>
   );
 };

@@ -1,10 +1,91 @@
 /* ==========================================================================
 Main page styles
 ========================================================================== */
-.hipster {
-  display: inline-block;
-  width: 100%;
-  height: 497px;
-  background: url('/content/images/jhipster_family_member_1.svg') no-repeat center top;
-  background-size: contain;
+.home-back {
+  overflow: hidden;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  justify-content: center;
+  animation: change forwards 98s infinite ease-in-out;
+}
+
+.home-backing {
+  overflow: hidden;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  justify-content: center;
+  animation: change forwards 100s infinite ease-in-out;
+}
+
+@keyframes change {
+  0% {
+    background: url('/content/images/starwars.jpeg');
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+  }
+  10% {
+    background: url('/content/images/dune.jpeg');
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+  }
+  20% {
+    background: url('/content/images/mandalorian.jpeg');
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+  }
+  30% {
+    background: url('/content/images/deadPool.jpeg');
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+  }
+  40% {
+    background: url('/content/images/batman.jpeg');
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+  }
+  50% {
+    background: url('/content/images/itClown.jpeg');
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+  }
+  60% {
+    background: url('/content/images/barbieMovie.jpeg');
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+  }
+  70% {
+    background: url('/content/images/lionKing.jpeg');
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+  }
+  80% {
+    background: url('/content/images/scream.jpeg');
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+  }
+  90% {
+    background: url('/content/images/GodzillavsKong.avif');
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+  }
+  // 97% {
+  //   background: url('/content/images/wonka.jpeg');
+  //   background-size: 100vw 100vh;
+  //   background-repeat: no-repeat;
+  // }
+  100% {
+    background: url('/content/images/starwars.jpeg');
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+  }
 }
