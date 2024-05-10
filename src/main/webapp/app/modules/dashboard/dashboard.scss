@@ -96,6 +96,10 @@ html {
       opacity: 1;
     }
   }
+
+  // .movie-item:hover {
+  //   width: 170px;
+  // }
 }
 
 .movie-grid-container:hover .movie-grid {
@@ -116,7 +120,7 @@ html {
   font-size: 24px;
   background: none;
   border: none;
-  color: white;
+  color: rgb(0, 0, 0);
   cursor: pointer;
 }
 
