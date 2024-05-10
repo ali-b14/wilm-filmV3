@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './dashboard.scss';
+import Movie from './movie';
+import { useNavigate } from 'react-router-dom';
 
 interface Movie {
   img: string;
@@ -22,7 +24,6 @@ const Dashboard: React.FC = () => {
   const apiKey = '72a82be4ce584fe790c0071997f35a73';
 
   const playVideo = url => {
-    // Ensure the URL is complete and includes the YouTube base URL if not already included
     const fullUrl = url.startsWith('http') ? url : `https://www.youtube.com/watch?v=${url}`;
     window.open(fullUrl, '_blank');
   };
@@ -100,6 +101,8 @@ const Dashboard: React.FC = () => {
 
 const MovieCategory: React.FC<{ title: string; url: string; playVideo: (url: string) => void }> = ({ title, url, playVideo }) => {
   const [movies, setMovies] = useState<Movie[]>([]);
+  const [movieId, setMovieId] = useState(Number);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchMovies = async () => {
@@ -120,19 +123,26 @@ const MovieCategory: React.FC<{ title: string; url: string; playVideo: (url: str
     fetchMovies();
   }, [url]);
 
+  // const handleClick = (index) => {
+  //   setMovieId(index);
+  //   const propMovieId = movies[movieId].id;
+  //   navigate(`/movie/${propMovieId}`);
+  // }
+
+  const handleClick = (index: number) => {
+    const clickedMovieId = movies[index].id;
+    navigate(`/movie/${clickedMovieId}`);
+  };
+
   return (
     <div className="movie-grid-container">
       <h3>{title}</h3>
       <div className="movie-grid">
-        {movies.map(movie => (
-          <div
-            key={movie.id}
-            className="movie-item"
-            onClick={() => movie.trailerUrl && playVideo(`https://www.youtube.com/watch?v=${movie.trailerUrl}`)}
-          >
+        {movies.map((movie, index) => (
+          <button key={movie.id} className="movie-item" onClick={() => handleClick(index)}>
             <img src={movie.img} alt={movie.title} className="movie-image" />
             <div className="movie-title-overlay">{movie.title}</div>
-          </div>
+          </button>
         ))}
       </div>
     </div>

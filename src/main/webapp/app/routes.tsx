@@ -1,5 +1,7 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 import { Route } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import Loadable from 'react-loadable';
 
 import Login from 'app/modules/login/login';
@@ -14,8 +16,9 @@ import PrivateRoute from 'app/shared/auth/private-route';
 import ErrorBoundaryRoutes from 'app/shared/error/error-boundary-routes';
 import PageNotFound from 'app/shared/error/page-not-found';
 import { AUTHORITIES } from 'app/config/constants';
-import Dashboard from './modules/dashboard/dashboard';
-import Movie from './modules/dashboard/movie';
+import Dashboard from './modules/dashboard/dashboard'; // Corrected import
+import Movie from './modules/dashboard/movie'; // Corrected import
+import App from './app';
 
 const loading = <div>loading ...</div>;
 
@@ -28,6 +31,7 @@ const Admin = Loadable({
   loader: () => import(/* webpackChunkName: "administration" */ 'app/modules/administration'),
   loading: () => loading,
 });
+
 const AppRoutes = () => {
   return (
     <div className="view-routes">
@@ -36,9 +40,9 @@ const AppRoutes = () => {
         <Route path="login" element={<Login />} />
         <Route path="logout" element={<Logout />} />
         <Route path="dashboard" element={<Dashboard />} />
-        <Route path="movie" element={<Movie />} />
+        <Route path="/movie/:id" element={<Movie />} />
         {/* <Route path="aboutUs" element={<AboutUs />} /> */}
-        {/* <Route path="contactUs" element={<ContactUs />} /> */}
+        {/* <Route path="contactUs" element={<ContactUs />} />*/}
         <Route path="account">
           <Route
             path="*"
@@ -68,14 +72,6 @@ const AppRoutes = () => {
           element={
             <PrivateRoute hasAnyAuthorities={[AUTHORITIES.ADMIN]}>
               <EntitiesRoutes />
-            </PrivateRoute>
-          }
-        />
-        <Route
-          path="dashboard/*"
-          element={
-            <PrivateRoute hasAnyAuthorities={[AUTHORITIES.ADMIN, AUTHORITIES.USER]}>
-              <Dashboard />
             </PrivateRoute>
           }
         />
