@@ -9,7 +9,7 @@
     <!--
         Added the entity VideoMetaData.
     -->
-    <changeSet id="20240509203743-1" author="jhipster">
+     <changeSet id="20240509203743-1" author="jhipster">
         <createTable tableName="video_meta_data">
             <column name="id" type="bigint" autoIncrement="true" startWith="1500">
                 <constraints primaryKey="true" nullable="false"/>
@@ -26,7 +26,6 @@
             <column name="description" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
         </createTable>
         <dropDefaultValue tableName="video_meta_data" columnName="upload_date" columnDataType="${datetimeType}"/>
     </changeSet>

@@ -9,6 +9,7 @@
     <!--
         Added the entity Video.
     -->
+
     <changeSet id="20240509203742-1" author="jhipster">
         <createTable tableName="video">
             <column name="id" type="bigint" autoIncrement="true" startWith="1500">
@@ -23,7 +24,6 @@
             <column name="uploader_id" type="bigint">
                 <constraints nullable="true" />
             </column>
-            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
         </createTable>
     </changeSet>
 

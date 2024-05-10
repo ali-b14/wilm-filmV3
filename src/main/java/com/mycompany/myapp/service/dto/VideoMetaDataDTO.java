@@ -19,7 +19,7 @@ public class VideoMetaDataDTO implements Serializable {
     @NotNull
     private String genre;
 
-    @NotNull
+    //    @NotNull
     private Instant uploadDate;
 
     private String description;
