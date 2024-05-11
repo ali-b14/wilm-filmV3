@@ -1,3 +1,5 @@
+import './commentSection.scss';
+
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router';
@@ -55,7 +57,7 @@ function CommentSection() {
       }
 
       const newComment = await response.json();
-      setComments(prevComments => [...prevComments, newComment]);
+      setComments(prevComments => [newComment, ...prevComments]);
       setCommentBody('');
     } catch (error) {
       console.error('Error submitting comment', error);
@@ -65,8 +67,10 @@ function CommentSection() {
   return (
     <div>
       <input value={commentBody} onChange={event => setCommentBody(event.target.value)} placeholder="Leave a Comment" />
-      <button onClick={submitComment as any}>Submit</button>
-      <div className="comment-section">
+      <button className="submit-button" onClick={submitComment as any}>
+        Submit
+      </button>
+      <div>
         {comments.map(comment => (
           <div className="comments" key={comment.id}>
             {comment.text}

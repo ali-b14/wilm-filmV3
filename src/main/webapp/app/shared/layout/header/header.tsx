@@ -50,11 +50,6 @@ const Header = (props: IHeaderProps) => {
                 <button className="button-design">Movies</button>
               </Link>
             )}
-            {props.isAuthenticated && (
-              <Link to="/Movie" className="nav-link">
-                <button className="button-design">Temp Movie</button>
-              </Link>
-            )}
           </Nav>
         </Collapse>
       </Navbar>
