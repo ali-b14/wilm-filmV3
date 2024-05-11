@@ -32,7 +32,7 @@ public class VideoMetaData implements Serializable {
     @Column(name = "genre", nullable = false)
     private String genre;
 
-    @NotNull
+    //    @NotNull
     @Column(name = "upload_date", nullable = false)
     private Instant uploadDate;
 

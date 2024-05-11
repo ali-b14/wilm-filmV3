@@ -2,6 +2,7 @@ import './dashboard.scss';
 import React, { useEffect, useState } from 'react';
 import FetchMovies from './fetchMovie';
 import { useParams } from 'react-router';
+import Likebutton from 'app/modules/dashboard/likes/likebutton';
 import CommentSection from './commentSection';
 
 interface MovieProps {
@@ -11,7 +12,7 @@ interface MovieProps {
 //PascalCasing
 const Movie = () => {
   const [movieData, setMovieData] = useState([]);
-  const [clickedMovieId] = useState(Number);
+  const [clickedMovieId, setClickedMovieId] = useState(Number);
   const [clickedMovieUrl, setClickedMovieUrl] = useState('');
   const { id } = useParams<{ id: string }>();
 
@@ -30,7 +31,6 @@ const Movie = () => {
   useEffect(() => {
     // eslint-disable-next-line no-console
     console.log(id);
-    `/commentSection/${clickedMovieId}`;
   }, [clickedMovieId]);
 
   // eslint-disable-next-line no-console
@@ -40,7 +40,7 @@ const Movie = () => {
   return (
     <div>
       {selectedMovie && (
-        <div className="container-movie-screen">
+        <div>
           <h1>THIS IS THE ID: {id}</h1>
           <span className="content-wrapper">
             <iframe
@@ -52,6 +52,7 @@ const Movie = () => {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
+            <Likebutton userId={1} videoId={Number(id)} />
             <span className="right-section">
               <CommentSection />
             </span>

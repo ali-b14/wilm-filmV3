@@ -1,0 +1,51 @@
+
+
+entity Video {
+	url String
+}
+
+entity VideoMetaData {
+  title String required,
+  genre String required,
+  uploadDate Instant required,
+  description String
+}
+
+entity Comment {
+  text String required maxlength(255),
+  postedAt Instant required
+}
+
+entity Like {
+  likedAt Instant required
+}
+
+entity Watched {
+  watchedAt Instant required
+}
+
+entity WatchLater {
+  // Define fields if necessary, e.g., addedAt Instant
+}
+
+
+
+relationship ManyToOne {
+  Comment{author} to User with builtInEntity,
+  Comment{video} to Video,
+  Like{user} to User with builtInEntity,
+  Like{video} to Video,
+  Video{uploader} to User with builtInEntity,
+  Watched{video} to Video,
+  WatchLater{video} to Video,
+  Watched{userProfile} to User with builtInEntity,
+  WatchLater{userProfile} to User with builtInEntity
+}
+
+relationship OneToOne {
+  Video{metaData} to VideoMetaData
+}
+
+paginate Video, Comment, Like, Watched, WatchLater with infinite-scroll
+service all with serviceImpl
+dto all with mapstruct

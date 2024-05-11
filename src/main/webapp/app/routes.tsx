@@ -41,7 +41,7 @@ const AppRoutes = () => {
         <Route path="logout" element={<Logout />} />
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="/movie/:id" element={<Movie />} />
-        {/* <Route path="aboutUs" element={<AboutUs />} /> */}
+        {/*<Route path="aboutUs" element={<AboutUs />} /> */}
         {/* <Route path="contactUs" element={<ContactUs />} />*/}
         <Route path="account">
           <Route
