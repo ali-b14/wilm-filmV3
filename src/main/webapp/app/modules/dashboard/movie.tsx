@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import FetchMovies from './fetchMovie';
 import { useParams } from 'react-router';
 import CommentSection from './commentSection';
+import Likebutton from 'app/modules/dashboard/likes/likebutton';
 
 interface MovieProps {
   trailerUrl: string;
