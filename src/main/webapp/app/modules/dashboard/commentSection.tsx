@@ -1,86 +1,71 @@
-import Comment from 'app/entities/comment/comment';
 import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { useParams } from 'react-router';
 
 interface Comment {
   id: string;
   text: string;
+  posted_at: string;
   author: string;
   video: string;
 }
 
-function commentSection() {
+function CommentSection() {
   const [comments, setComments] = useState<Comment[]>([]);
   const [commentBody, setCommentBody] = useState('');
 
+  const { id } = useParams<{ id: string }>();
+
   useEffect(() => {
-    FetchComment()
-      .then(data => {
-        setComments(data);
-        // eslint-disable-next-line no-console
-        console.log(data);
-      })
-      .catch(error => {
-        console.error('Error fetching movies', error);
-      });
+    fetchComments();
   }, []);
 
-  async function FetchComment(): Promise<Comment[]> {
+  const fetchComments = async () => {
     try {
       const response = await fetch('/api/comments');
       if (!response.ok) {
         throw new Error('Failed to fetch comments');
       }
       const data = await response.json();
-      return data;
+      setComments(data);
     } catch (error) {
       console.error('Error fetching comments', error);
-      throw error;
     }
-  }
-
-  const submitComment = () => {
-    fetch('/api/comments', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ text: commentBody }),
-    })
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Failed to submit comment');
-        }
-        return FetchComment();
-      })
-      .then(() => {
-        setCommentBody('');
-      })
-      .catch(error => {
-        console.error('Error submitting comment', error);
-      });
   };
 
-  // const onComment = () => {
-  //   const newComment: Comment = {
-  //     id: String(comments.length + 1),
-  //     text: commentBody,
-  //   };
+  const currentUser = useSelector((state: any) => state.authentication.account);
 
-  //   setComments(prev => [newComment, ...prev]);
-  //   setCommentBody("");
-  // }
+  const submitComment = async () => {
+    try {
+      const response = await fetch('/api/comments', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          text: commentBody,
+          postedAt: new Date().toISOString(),
+          author: { id: currentUser.id, login: currentUser.login },
+          video: { id },
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit comment');
+      }
+
+      const newComment = await response.json();
+      setComments(prevComments => [...prevComments, newComment]);
+      setCommentBody('');
+    } catch (error) {
+      console.error('Error submitting comment', error);
+    }
+  };
 
   return (
     <div>
-      <input
-        value={commentBody}
-        onChange={event => setCommentBody(event.target.value)}
-        placeholder="Leave a Comment"
-        // className="border-[1px]"
-      />
-      <span>
-        <button onClick={submitComment}>Submit</button>
-      </span>
+      <input value={commentBody} onChange={event => setCommentBody(event.target.value)} placeholder="Leave a Comment" />
+      <button onClick={submitComment as any}>Submit</button>
       <div className="comment-section">
         {comments.map(comment => (
           <div className="comments" key={comment.id}>
@@ -92,4 +77,4 @@ function commentSection() {
   );
 }
 
-export default commentSection;
+export default CommentSection;

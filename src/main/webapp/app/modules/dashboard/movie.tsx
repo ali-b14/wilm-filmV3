@@ -11,7 +11,7 @@ interface MovieProps {
 //PascalCasing
 const Movie = () => {
   const [movieData, setMovieData] = useState([]);
-  const [clickedMovieId, setClickedMovieId] = useState(Number);
+  const [clickedMovieId] = useState(Number);
   const [clickedMovieUrl, setClickedMovieUrl] = useState('');
   const { id } = useParams<{ id: string }>();
 
@@ -30,6 +30,7 @@ const Movie = () => {
   useEffect(() => {
     // eslint-disable-next-line no-console
     console.log(id);
+    `/commentSection/${clickedMovieId}`;
   }, [clickedMovieId]);
 
   // eslint-disable-next-line no-console
@@ -51,7 +52,7 @@ const Movie = () => {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
-            <span className="comment-section">
+            <span className="right-section">
               <CommentSection />
             </span>
           </span>
