@@ -19,7 +19,6 @@ import { AUTHORITIES } from 'app/config/constants';
 import Dashboard from './modules/dashboard/dashboard'; // Corrected import
 import Movie from './modules/dashboard/movie'; // Corrected import
 import App from './app';
-import AboutUs from 'app/modules/about-us/aboutus';
 
 const loading = <div>loading ...</div>;
 
@@ -42,7 +41,7 @@ const AppRoutes = () => {
         <Route path="logout" element={<Logout />} />
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="/movie/:id" element={<Movie />} />
-        <Route path="aboutUs" element={<AboutUs />} />
+        {/*<Route path="aboutUs" element={<AboutUs />} /> */}
         {/* <Route path="contactUs" element={<ContactUs />} />*/}
         <Route path="account">
           <Route

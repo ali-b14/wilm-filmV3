@@ -72,7 +72,33 @@ html {
 }
 
 .chaz-card {
-  background: url('./assets/chaz.jpeg');
+  background: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.seroundtable.com%2Fphotos%2Fgoogle-dog-puppy-eyes-25039.html&psig=AOvVaw0o8vrCZcDBKmQ4pa4tRHSb&ust=1715464715593000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCKjShZqKhIYDFQAAAAAdAAAAABAE');
+  background-size: cover;
   width: 100%;
   height: 100%;
+}
+.chaz-card,
+.ali-card,
+.anthony-card,
+.michael-card,
+.trey-card {
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  padding: 16px;
+}
+
+h2,
+.title,
+p {
+  margin: 0 0 8px;
+}
+
+.button {
+  padding: 10px 20px;
+  margin-right: 10px;
+  cursor: pointer;
 }

@@ -1,6 +1,11 @@
 package com.mycompany.myapp.web.rest;
 
+import com.mycompany.myapp.domain.Like;
+import com.mycompany.myapp.domain.User;
+import com.mycompany.myapp.domain.Video;
 import com.mycompany.myapp.repository.LikeRepository;
+import com.mycompany.myapp.repository.UserRepository;
+import com.mycompany.myapp.repository.VideoRepository;
 import com.mycompany.myapp.service.LikeService;
 import com.mycompany.myapp.service.dto.LikeDTO;
 import com.mycompany.myapp.web.rest.errors.BadRequestAlertException;
@@ -8,6 +13,7 @@ import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.time.Instant;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -60,6 +66,8 @@ public class LikeResource {
         if (likeDTO.getId() != null) {
             throw new BadRequestAlertException("A new like cannot already have an ID", ENTITY_NAME, "idexists");
         }
+
+        likeDTO.setLikedAt(Instant.now());
         likeDTO = likeService.save(likeDTO);
         return ResponseEntity.created(new URI("/api/likes/" + likeDTO.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(applicationName, true, ENTITY_NAME, likeDTO.getId().toString()))
@@ -143,7 +151,7 @@ public class LikeResource {
      */
     @GetMapping("")
     public ResponseEntity<List<LikeDTO>> getAllLikes(@org.springdoc.core.annotations.ParameterObject Pageable pageable) {
-        log.debug("REST request to get a page of Likes");
+        log.debug("REST request to get a page of Likebutton");
         Page<LikeDTO> page = likeService.findAll(pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);
         return ResponseEntity.ok().headers(headers).body(page.getContent());

@@ -65,7 +65,7 @@ public class LikeServiceImpl implements LikeService {
     @Override
     @Transactional(readOnly = true)
     public Page<LikeDTO> findAll(Pageable pageable) {
-        log.debug("Request to get all Likes");
+        log.debug("Request to get all Likebutton");
         return likeRepository.findAll(pageable).map(likeMapper::toDto);
     }
 
