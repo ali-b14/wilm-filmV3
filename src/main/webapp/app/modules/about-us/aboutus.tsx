@@ -1,10 +1,42 @@
-import './styles.css';
+import './aboutus.scss';
 import React from 'react';
-import Chaz from './assets/chaz.jpeg';
-import Ali from './assets/ali.jpeg';
-import Trey from './assets/trey.jpeg';
-import Michael from './assets/michael.jpeg';
-import Anthony from './assets/anthony.jpeg';
+
+export const ChazIcon = chazProp => (
+  <div>
+    <a href="#">
+      <img src="/content/images/chaz.jpeg" alt="Chaz" style={{ width: '330px' }} />
+    </a>
+  </div>
+);
+export const TreyIcon = treyProps => (
+  <div>
+    <a href="#">
+      <img src="/content/images/trey.jpeg" alt="Trey" style={{ width: '330px' }} />
+    </a>
+  </div>
+);
+
+export const MichaelIcon = michaelProps => (
+  <div>
+    <img src="/content/images/michael.jpeg" alt="Michael" style={{ width: '330px' }} />
+  </div>
+);
+
+export const AnthonyIcon = anthonyProps => (
+  <div>
+    <a href="#">
+      <img src="/content/images/anthony.jpeg" alt="Anthony" style={{ width: '330px' }} />
+    </a>
+  </div>
+);
+
+export const AliIcon = aliProps => (
+  <div>
+    <a href="#">
+      <img src="/content/images/ali.jpeg" alt="Ali" style={{ width: '330px' }} />
+    </a>
+  </div>
+);
 
 const AboutUs = () => {
   return (
@@ -18,7 +50,7 @@ const AboutUs = () => {
       <div className="row">
         <div className="column">
           <div className="card">
-            <img src={Chaz} alt="Chaz" style={{ width: '100%' }} />
+            <ChazIcon />
             <div className="container">
               <h2>Chaz Adams</h2>
               <p className="title">Software Developer</p>
@@ -37,7 +69,7 @@ const AboutUs = () => {
 
         <div className="column">
           <div className="card">
-            <img src={Ali} alt="Ali" style={{ width: '100%' }} />
+            <AliIcon />
             <div className="container">
               <h2>Ali Bangash</h2>
               <p className="title">Software Developer</p>
@@ -56,7 +88,7 @@ const AboutUs = () => {
 
         <div className="column">
           <div className="card">
-            <img src={Trey} alt="Trey" style={{ width: '100%' }} />
+            <TreyIcon />
             <div className="container">
               <h2>Trey Bruton</h2>
               <p className="title">Software Developer</p>
@@ -75,7 +107,7 @@ const AboutUs = () => {
 
         <div className="column">
           <div className="card">
-            <img src={Michael} alt="Michael" style={{ width: '100%' }} />
+            <MichaelIcon />
             <div className="container">
               <h2>Michael Scott</h2>
               <p className="title">Software Developer</p>
@@ -94,7 +126,7 @@ const AboutUs = () => {
 
         <div className="column">
           <div className="card">
-            <img src={Anthony} alt="Anthony" style={{ width: '100%' }} />
+            <AnthonyIcon />
             <div className="container">
               <h2>Anthony Pearson</h2>
               <p className="title">Software Developer</p>
