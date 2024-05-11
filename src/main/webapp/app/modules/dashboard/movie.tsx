@@ -2,6 +2,7 @@ import './dashboard.scss';
 import React, { useEffect, useState } from 'react';
 import FetchMovies from './fetchMovie';
 import { useParams } from 'react-router';
+import CommentSection from './commentSection';
 
 interface MovieProps {
   trailerUrl: string;
@@ -38,17 +39,22 @@ const Movie = () => {
   return (
     <div>
       {selectedMovie && (
-        <div>
+        <div className="container-movie-screen">
           <h1>THIS IS THE ID: {id}</h1>
-          <iframe
-            title="Embedded Content"
-            width="1500"
-            height="1000"
-            src={selectedMovie.url}
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
+          <span className="content-wrapper">
+            <iframe
+              title="Embedded Content"
+              width="1500"
+              height="1000"
+              src={selectedMovie.url}
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+            <span className="comment-section">
+              <CommentSection />
+            </span>
+          </span>
         </div>
       )}
     </div>
