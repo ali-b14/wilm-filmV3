@@ -34,8 +34,6 @@ const Dashboard: React.FC = () => {
     const categoryUrls: Category[] = [
       { title: 'Upcoming', url: `https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}&language=en-US&page=1` },
       { title: 'Popular', url: `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1` },
-      { title: 'Now Playing', url: `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&language=en-US&page=1` },
-      { title: 'Top Rated', url: `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&language=en-US&page=1` },
       { title: 'Action', url: `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&with_genres=28` },
       { title: 'Comedy', url: `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&with_genres=35` },
       {
@@ -73,7 +71,7 @@ const Dashboard: React.FC = () => {
 
   return (
     <div>
-      <div className="header-content">WilFilm</div>
+      {/* <div className="header-content">WilFilm</div> */}
       <div className="container">
         {mainMovie && (
           <div className="movie-highlight">

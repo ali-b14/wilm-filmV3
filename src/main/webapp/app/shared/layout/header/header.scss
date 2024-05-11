@@ -122,14 +122,12 @@ Button styles
 }
 
 .home-title {
-  color: white;
+  color: rgb(255, 252, 252);
   font-size: 20px;
   padding: 5px;
 }
 
 .home-title:hover {
-  background-color: #000000;
-  border: solid 0.08em #ffffff;
-  color: rgb(255, 0, 0);
+  color: rgb(0, 0, 0);
   border-radius: 10px;
 }
