@@ -67,7 +67,7 @@ public class VideoResource {
     /**
      * {@code PUT  /videos/:id} : Updates an existing video.
      *
-     * @param id the id of the videoDTO to save.
+     * @param id       the id of the videoDTO to save.
      * @param videoDTO the videoDTO to update.
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the updated videoDTO,
      * or with status {@code 400 (Bad Request)} if the videoDTO is not valid,
@@ -100,7 +100,7 @@ public class VideoResource {
     /**
      * {@code PATCH  /videos/:id} : Partial updates given fields of an existing video, field will ignore if it is null
      *
-     * @param id the id of the videoDTO to save.
+     * @param id       the id of the videoDTO to save.
      * @param videoDTO the videoDTO to update.
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the updated videoDTO,
      * or with status {@code 400 (Bad Request)} if the videoDTO is not valid,

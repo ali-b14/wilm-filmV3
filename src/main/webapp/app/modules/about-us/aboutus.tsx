@@ -54,7 +54,10 @@ const AboutUs = () => {
             <div className="container">
               <h2>Chaz Adams</h2>
               <p className="title">Software Developer</p>
-              <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+              <p>
+                Mastering the intricacies of full-stack development. With experience as an airborne infantryman in the Army, I bring strong
+                teamwork, adaptability, and problem-solving skills to the table.
+              </p>
               <p>
                 <a href="https://github.com/Chaz-Adams">
                   <button className="button">GitHub</button>
@@ -73,7 +76,7 @@ const AboutUs = () => {
             <div className="container">
               <h2>Ali Bangash</h2>
               <p className="title">Software Developer</p>
-              <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+              <p>Docker</p>
               <p>
                 <a href="https://github.com/ali-b14">
                   <button className="button">GitHub</button>
@@ -92,7 +95,11 @@ const AboutUs = () => {
             <div className="container">
               <h2>Trey Bruton</h2>
               <p className="title">Software Developer</p>
-              <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+              <p>
+                Eager to learn and implement technical problem-solving skills to create change in the world. Serving the country as a 12N -
+                Heavy Construction Engineer, I plan to use the skills ingrained in me from my Army career in my future career as a Software
+                Developer.
+              </p>
               <p>
                 <a href="https://github.com/tb0902">
                   <button className="button">GitHub</button>
@@ -111,7 +118,10 @@ const AboutUs = () => {
             <div className="container">
               <h2>Michael Scott</h2>
               <p className="title">Software Developer</p>
-              <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+              <p>
+                Passionate about transitioning into a role as a Software Engineer, leveraging my background in Electronic Engineering and
+                customer service experience to drive innovative solutions and enhance user experiences.
+              </p>
               <p>
                 <a href="https://github.com/MichaelS0521">
                   <button className="button">GitHub</button>
