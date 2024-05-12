@@ -184,4 +184,10 @@ public class LikeResource {
             .headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id.toString()))
             .build();
     }
+
+    @GetMapping("/likes/count")
+    public ResponseEntity<Long> countLikes(@RequestParam Long videoId) {
+        Long count = likeRepository.countByVideoId(videoId);
+        return ResponseEntity.ok().body(count);
+    }
 }
