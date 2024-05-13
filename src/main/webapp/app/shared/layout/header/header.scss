@@ -95,8 +95,8 @@ Navbar styles
     rgba(0, 0, 0, 0.85),
     rgb(103, 35, 35, 0.85),
     rgb(103, 35, 35, 0.85),
-    rgb(103, 35, 35, 0.85),
-    rgba(0, 0, 0, 0.85)
+    rgba(103, 35, 35, 0.963),
+    rgba(0, 0, 0, 0.889)
   );
   z-index: 1000;
 }
@@ -128,6 +128,6 @@ Button styles
 }
 
 .home-title:hover {
-  color: rgb(0, 0, 0);
+  color: rgba(255, 255, 255, 0.73);
   border-radius: 10px;
 }

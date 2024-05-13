@@ -8,19 +8,29 @@ import { Translate, translate } from 'react-jhipster';
 const adminMenuItems = () => (
   <>
     <MenuItem icon="users" to="/admin/user-management">
-      <Translate contentKey="global.menu.admin.userManagement">User management</Translate>
+      <span className="dropdown-options">
+        <Translate contentKey="global.menu.admin.userManagement">User management</Translate>
+      </span>
     </MenuItem>
     <MenuItem icon="tachometer-alt" to="/admin/metrics">
-      <Translate contentKey="global.menu.admin.metrics">Metrics</Translate>
+      <span className="dropdown-options">
+        <Translate contentKey="global.menu.admin.metrics">Metrics</Translate>
+      </span>
     </MenuItem>
     <MenuItem icon="heart" to="/admin/health">
-      <Translate contentKey="global.menu.admin.health">Health</Translate>
+      <span className="dropdown-options">
+        <Translate contentKey="global.menu.admin.health">Health</Translate>
+      </span>
     </MenuItem>
     <MenuItem icon="cogs" to="/admin/configuration">
-      <Translate contentKey="global.menu.admin.configuration">Configuration</Translate>
+      <span className="dropdown-options">
+        <Translate contentKey="global.menu.admin.configuration">Configuration</Translate>
+      </span>
     </MenuItem>
     <MenuItem icon="tasks" to="/admin/logs">
-      <Translate contentKey="global.menu.admin.logs">Logs</Translate>
+      <span className="dropdown-options">
+        <Translate contentKey="global.menu.admin.logs">Logs</Translate>
+      </span>
     </MenuItem>
     {/* jhipster-needle-add-element-to-admin-menu - JHipster will add entities to the admin menu here */}
   </>
@@ -28,13 +38,18 @@ const adminMenuItems = () => (
 
 const openAPIItem = () => (
   <MenuItem icon="book" to="/admin/docs">
-    <Translate contentKey="global.menu.admin.apidocs">API</Translate>
+    <span className="dropdown-options">
+      <Translate contentKey="global.menu.admin.apidocs">API</Translate>
+    </span>
   </MenuItem>
 );
 
 const databaseItem = () => (
   <DropdownItem tag="a" href="./h2-console/" target="_tab">
-    <FontAwesomeIcon icon="database" fixedWidth /> <Translate contentKey="global.menu.admin.database">Database</Translate>
+    <FontAwesomeIcon icon="database" fixedWidth />
+    <span className="dropdown-options">
+      <Translate contentKey="global.menu.admin.database">Database</Translate>
+    </span>
   </DropdownItem>
 );
 

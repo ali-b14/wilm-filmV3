@@ -8,22 +8,34 @@ const EntitiesMenu = () => {
     <>
       {/* prettier-ignore */}
       <MenuItem icon="asterisk" to="/video">
+        <span className="dropdown-options">
         <Translate contentKey="global.menu.entities.video" />
+        </span>
       </MenuItem>
       <MenuItem icon="asterisk" to="/video-meta-data">
-        <Translate contentKey="global.menu.entities.videoMetaData" />
+        <span className="dropdown-options">
+          <Translate contentKey="global.menu.entities.videoMetaData" />
+        </span>
       </MenuItem>
       <MenuItem icon="asterisk" to="/comment">
-        <Translate contentKey="global.menu.entities.comment" />
+        <span className="dropdown-options">
+          <Translate contentKey="global.menu.entities.comment" />
+        </span>
       </MenuItem>
       <MenuItem icon="asterisk" to="/like">
-        <Translate contentKey="global.menu.entities.like" />
+        <span className="dropdown-options">
+          <Translate contentKey="global.menu.entities.like" />
+        </span>
       </MenuItem>
       <MenuItem icon="asterisk" to="/watched">
-        <Translate contentKey="global.menu.entities.watched" />
+        <span className="dropdown-options">
+          <Translate contentKey="global.menu.entities.watched" />
+        </span>
       </MenuItem>
       <MenuItem icon="asterisk" to="/watch-later">
-        <Translate contentKey="global.menu.entities.watchLater" />
+        <span className="dropdown-options">
+          <Translate contentKey="global.menu.entities.watchLater" />
+        </span>
       </MenuItem>
       {/* jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here */}
     </>

@@ -23,13 +23,13 @@ const Footer = ({ isAuthenticated }: IFooterProps) => {
       <div className="link-group">
         <div className="link-container">
           <div></div>
-          <a href="#">
+          <a href="/aboutus">
             <line>About Us</line>
           </a>
           <a href="#">
             <line>Have Questions?</line>
           </a>
-          <a href="/Dashboard">
+          <a href="/login">
             <line>Watch Now</line>
           </a>
         </div>

@@ -3,6 +3,7 @@ import './commentSection.scss';
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router';
+import Likebutton from './likes/likebutton';
 
 interface Comment {
   id: string;
@@ -66,10 +67,16 @@ function CommentSection() {
 
   return (
     <div>
-      <input value={commentBody} onChange={event => setCommentBody(event.target.value)} placeholder="Leave a Comment" />
+      <input
+        value={commentBody}
+        onChange={event => setCommentBody(event.target.value)}
+        className="comment-input"
+        placeholder="Leave a Comment"
+      />
       <button className="submit-button" onClick={submitComment as any}>
         Submit
       </button>
+      <Likebutton userId={1} videoId={Number(id)} />
       <div>
         {comments.map(comment => (
           <div className="comments" key={comment.id}>

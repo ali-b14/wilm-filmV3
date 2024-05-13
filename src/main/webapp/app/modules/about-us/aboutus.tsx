@@ -1,13 +1,6 @@
 import './aboutus.scss';
 import React from 'react';
 
-export const ChazIcon = chazProp => (
-  <div>
-    <a href="#">
-      <img src="/content/images/chaz.jpeg" alt="Chaz" style={{ width: '330px' }} />
-    </a>
-  </div>
-);
 export const TreyIcon = treyProps => (
   <div>
     <a href="#">
@@ -26,6 +19,14 @@ export const AnthonyIcon = anthonyProps => (
   <div>
     <a href="#">
       <img src="/content/images/anthony.jpeg" alt="Anthony" style={{ width: '330px' }} />
+    </a>
+  </div>
+);
+
+export const ChazIcon = chazProp => (
+  <div>
+    <a href="#">
+      <img src="/content/images/chazAboutme.jpg" alt="Chaz" style={{ width: '330px' }} />
     </a>
   </div>
 );
@@ -106,7 +107,7 @@ const AboutUs = () => {
         </div>
 
         <div className="column">
-          <div className="card">
+          <div className="card bottom-card">
             <MichaelIcon />
             <div className="container">
               <h2>Michael Scott</h2>
@@ -125,7 +126,7 @@ const AboutUs = () => {
         </div>
 
         <div className="column">
-          <div className="card">
+          <div className="card bottom-card">
             <AnthonyIcon />
             <div className="container">
               <h2>Anthony Pearson</h2>

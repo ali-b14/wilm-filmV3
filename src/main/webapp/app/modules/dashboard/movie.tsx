@@ -42,18 +42,14 @@ const Movie = () => {
     <div>
       {selectedMovie && (
         <div className="container-movie-screen">
-          <h1>THIS IS THE ID: {id}</h1>
           <span className="content-wrapper">
             <iframe
               title="Embedded Content"
-              width="1500"
-              height="1000"
               src={selectedMovie.url}
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
-            <Likebutton userId={1} videoId={Number(id)} />
             <span className="comment-section">
               <CommentSection />
             </span>

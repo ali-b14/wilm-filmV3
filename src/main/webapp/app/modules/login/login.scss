@@ -55,6 +55,42 @@
   background-image: url('/content/images/BackgroundEx.avif');
 }
 
+.logout-content {
+  height: 200px;
+  width: 400px;
+  background-image: linear-gradient(
+    to right,
+    #672323c9,
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0.75),
+    rgba(103, 35, 35, 0.789)
+  );
+  position: relative;
+  transform: translate(20%, 20%);
+  top: 30%;
+  left: 30%;
+  border-radius: 30px;
+  backface-visibility: visible;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  padding: 80px 65px;
+}
+
+.logout-back {
+  overflow: hidden;
+  position: relative;
+  width: 98.5vw;
+  height: 100vh;
+  display: block;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  justify-content: center;
+  // animation: change forwards 100s infinite ease-in-out;
+  background-image: url('/content/images/BackgroundEx.avif');
+}
+
 @keyframes change {
   0% {
     background: url('/content/images/starwars.jpeg');
@@ -116,4 +152,8 @@
     background-size: 100vw 100vh;
     background-repeat: no-repeat;
   }
+}
+
+h4 {
+  color: white;
 }

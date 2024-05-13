@@ -7,7 +7,7 @@ import LoadingBar from 'react-redux-loading-bar';
 
 import { Home, Brand } from './header-components';
 import { AdminMenu, EntitiesMenu, AccountMenu } from '../menus';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 export interface IHeaderProps {
   isAuthenticated: boolean;
@@ -16,6 +16,12 @@ export interface IHeaderProps {
   isInProduction: boolean;
   isOpenAPIEnabled: boolean;
 }
+
+export const BrandIcon = props => (
+  <div {...props} className="brand-icon">
+    <img src="/content/images/icons8-back-button-64.png" alt="Back Button" style={{ width: '35px' }} />
+  </div>
+);
 
 const Header = (props: IHeaderProps) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -28,6 +34,12 @@ const Header = (props: IHeaderProps) => {
   //   ) : null;
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
+
+  const location = useLocation();
+
+  const isMoviePage = location.pathname.startsWith('/movie/');
+
+  const isHomePage = location.pathname === '/';
 
   /* jhipster-needle-add-element-to-menu - JHipster will add new menu items here */
 
@@ -45,9 +57,14 @@ const Header = (props: IHeaderProps) => {
               <AdminMenu showOpenAPI={props.isOpenAPIEnabled} showDatabase={!props.isInProduction} />
             )}
             <AccountMenu isAuthenticated={props.isAuthenticated} />
-            {props.isAuthenticated && (
+            {props.isAuthenticated && isHomePage && (
               <Link to="/Dashboard" className="nav-link">
                 <button className="button-design">Movies</button>
+              </Link>
+            )}
+            {isMoviePage && (
+              <Link to="/Dashboard" className="nav-link">
+                <BrandIcon />
               </Link>
             )}
           </Nav>
