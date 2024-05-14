@@ -14,6 +14,21 @@
 # http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
 # ===================================================================
 
+cloud:
+  aws:
+    credentials:
+      access-key:
+      secret-key:
+    region: us-east-2
+    stack:
+      auto: false
+
+application:
+  bucket-name: wilmfilmbucket
+
+server:
+  port: 8080
+
 ---
 # Conditionally disable springdoc on missing api-docs profile
 spring:
