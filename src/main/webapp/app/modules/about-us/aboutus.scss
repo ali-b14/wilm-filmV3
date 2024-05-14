@@ -21,15 +21,27 @@ html {
 }
 
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px 0 rgba(255, 0, 0, 0.748);
   margin: 8px;
   border-radius: 10px;
 }
 
+.bottom-card {
+  box-shadow: 0 4px 8px 0 rgba(255, 0, 0, 0.748);
+  margin: 10px;
+  border-radius: 10px;
+  margin-left: 200px;
+  width: 30vw;
+}
+
+.over-right {
+  margin-left: 30%;
+}
+
 .about-section {
-  padding: 50px;
+  padding: 70px 30px;
   text-align: center;
-  background-color: #474e5d;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgb(103, 35, 35, 0.85), rgb(103, 35, 35, 0.85), rgba(0, 0, 0, 0.85));
   color: white;
 }
 
@@ -67,7 +79,7 @@ html {
 @media screen and (max-width: 650px) {
   .column {
     width: 100%;
-    display: block;
+    display: contents;
   }
 }
 
@@ -101,7 +113,4 @@ p {
   padding: 10px 20px;
   margin-right: 10px;
   cursor: pointer;
-}
-
-.h2 {
 }

@@ -1,25 +1,27 @@
 .submit-button {
   position: relative;
-  background-color: azure;
-  border: solid 1px #ff0000;
+  background-color: rgb(255, 0, 0);
+  border: solid 1px #ffffff;
+  color: white;
   // border-radius: 20%;
-  font-size: 20px;
+  font-size: 19.5px;
   height: 4vh;
   border-top-right-radius: 20%;
   border-bottom-right-radius: 20%;
 }
 
 .submit-button:hover {
-  background-color: rgb(255, 0, 0);
+  background-color: rgb(0, 0, 0);
   border: solid 1px #ffffff;
-  color: white;
-  font-size: 20px;
+  color: rgb(255, 0, 0);
+  font-size: 19.5px;
   height: 4vh;
   border-top-right-radius: 20%;
   border-bottom-right-radius: 20%;
 }
 
 .comments {
+  position: relative;
   display: table;
   padding: 8px 12px;
   margin: 4px;
@@ -54,8 +56,9 @@
   position: relative;
 }
 
-input {
-  border: 2px solid #ff000076;
+.comment-input {
+  margin-top: 65px;
+  border: 1px solid #ff0000;
   background-color: rgb(255, 255, 255);
   width: 14vw;
   height: 4vh;
@@ -65,8 +68,8 @@ input {
   border-bottom-left-radius: 10px 10px;
 }
 
-input:hover {
-  border: 2px solid #00000076;
+.comment-input:hover {
+  border: 1px solid #00000076;
   background-color: rgba(255, 255, 255, 0.757);
   width: 14vw;
   height: 4vh;
